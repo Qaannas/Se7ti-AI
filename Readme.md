@@ -135,15 +135,6 @@ googletrans and deep-translator: Used for translating the extracted text to diff
 **DEMO Predignose feater**
 [Watch Demo Video](./2024-InnovAI-Hackathon/DHEALR/DEMO/demo-predignose.mp4)
 
-## PITCH 
-
-**PRESENTATION**
-[PRESENTATION](./2024-InnovAI-Hackathon/DHEALR/PITCH/Pitch.pdf)
-
-
-**PITCH VIDEO**
-[PITCH VIDEO](./2024-InnovAI-Hackathon/DHEALR/PITCH/Pitch-Video.mp4)
-
 
 ## Important Note
 
