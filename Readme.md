@@ -1,22 +1,51 @@
-# Medical Assistance and Medication Information App
+# Se7ti-AI: Medical Assistance and Medication Information App
 
-## Abstract
+## Overview
 
-### Background and Problem Statement
+Se7ti-AI is a medical assistance application designed to address healthcare accessibility challenges in Morocco. The application leverages AI to provide medical guidance, pre-diagnosis, and medication information in both Moroccan Arabic (Darija) and English.
+
+## Project Structure
+
+The project consists of three main implementation variations:
+- `main.py` - Core implementation using Google's Generative AI
+- `main-llama.py` - Implementation using Llama model
+- `main-multimodel.py` - Enhanced implementation supporting multiple AI models
+
+## Key Features
+
+1. **Medical Pre-Diagnosis**
+   - Symptom analysis and preliminary health assessment
+   - Urgency evaluation for medical conditions
+   - Available in English with Darija support coming soon
+
+2. **Medication Information**
+   - Extract medication details via OCR from uploaded images
+   - Provide usage instructions and potential side effects
+   - Search medication information by name
+
+3. **Multi-language Support**
+   - English and Moroccan Arabic (Darija) interfaces
+   - Translation capabilities between languages
+
+4. **User Privacy Protection**
+   - Option to modify personal information before submission
+   - Control over sensitive medical data
+
+## Background and Problem Statement
 
 In Morocco, many people struggle to access healthcare or receive timely advice due to language barriers, lack of resources, or the unavailability of nearby medical professionals. Specifically, Moroccan users face challenges when trying to use large language models or medical applications for self-diagnosis and understanding their health conditions. Additionally, many patients fail to fully read or understand the information provided with medications, leading to potential misuse or missed side effects. Furthermore, patients often do not know whether a medical issue is urgent or not.
 
 The lack of accessibility to reliable health resources in Moroccan Arabic (Darija) compounds the problem, as most available applications and medical information are in English or other languages that are not native to many Moroccans. This can prevent them from making informed decisions about their health, and hinder their ability to manage their conditions appropriately.
 
-### TEAM MENBERS
+## Team Members
 
-Anas Ouhannou
-Belkhlifi Anas
-Imane El Maakoul
-Mayssae Jabbar
-Wajih Esghayri
+- Anas Ouhannou
+- Belkhlifi Anas
+- Imane El Maakoul
+- Mayssae Jabbar
+- Wajih Esghayri
 
-### Impact and Proposed Solution
+## Impact and Proposed Solution
 
 This project aims to solve these problems by providing a web application that allows Moroccan users to interact with a chatbot for medical assistance and pre-diagnosis. The application supports both Darija (Moroccan Arabic) and English, making it more accessible to the local population.
 
@@ -27,112 +56,92 @@ The application enables users to:
 
 By offering accurate and reliable medical guidance in Darija and English, the app helps Moroccan users make informed decisions about their health, and reduces the risk of misunderstanding medication instructions.
 
-### Project Outcomes and Deliverables
+## Technical Implementation
 
-The expected outcomes and deliverables of this project include:
+### Components and Technologies
 
-- A fully functional **Streamlit-based web application** that allows Moroccan users to interact with the chatbot in both Darija and English.
-- **OCR functionality** to extract text from images and provide medical advice based on the extracted information.
-- A **pre-diagnosis feature** that helps users assess whether their symptoms are urgent and get recommendations for next steps.
-- A **medication information feature** where users can upload images or enter medication names to get basic and crucial information, including potential side effects.
-- **User confidentiality protection** by allowing them to modify or delete their personal information.
-- **Multi-language support**, starting with English and Darija, ensuring accessibility for a wider audience.
+1. **Frontend**: Built with Streamlit for a responsive and interactive user interface
+2. **OCR Capabilities**: Using pytesseract to extract text from medication images
+3. **AI Models**:
+   - Google Generative AI (main.py)
+   - Llama Model (main-llama.py)
+   - Multi-model support (main-multimodel.py)
+4. **Translation**: Using googletrans and deep_translator libraries for language conversion
+5. **Image Processing**: Utilizing PIL for image manipulation and preparation for OCR
+
+### Main Architecture
+
+The application follows a streamlined architecture:
+1. User inputs (text, images) → 
+2. Processing (OCR, translation) → 
+3. AI model inference → 
+4. Response generation → 
+5. User-friendly display
+
+## Requirements and Setup
+
+### Dependencies
+
+```
+streamlit
+pytesseract
+Pillow
+requests
+python-dotenv
+google-generativeai>=0.8.0
+transformers (for main-llama.py and main-multimodel.py)
+llama_cpp (for main-llama.py and main-multimodel.py)
+googletrans==4.0.0-rc1 (for main-llama.py and main-multimodel.py)
+deep_translator (for main-llama.py and main-multimodel.py)
+```
+
+### Prerequisites for llama_cpp
+The llama_cpp library requires a C++ compiler and additional tools for building C++ extensions:
+
+1. **C++ Compiler**:
+   - Windows: Install Visual Studio Build Tools
+   - macOS: Install Xcode Command Line Tools (`xcode-select --install`)
+   - Linux: Install GCC (`sudo apt-get install build-essential`)
+
+2. **CMake**:
+   - Windows: Download from the CMake website
+   - macOS: `brew install cmake`
+   - Linux: `sudo apt install cmake`
+
+### Tesseract OCR Installation
+Required for image text extraction:
+- Windows: Download Tesseract OCR
+- macOS: `brew install tesseract`
+- Linux: `sudo apt install tesseract-ocr`
+
+## Running the Application
+
+To start the application, navigate to the project directory and run:
+
+```bash
+# For the standard version
+streamlit run main.py
+
+# For the Llama model version
+streamlit run main-llama.py
+
+# For the multi-model version
+streamlit run main-multimodel.py
+```
+
+## Project Status and Future Work
+
+The application is currently functional with core features implemented. Future work includes:
+- Enhanced Darija language support for medical pre-diagnosis
+- Expanded medication database
+- Integration with healthcare provider systems
+- Mobile application development
+
+## Contact Information
+
+For questions or issues with the project, please contact:
+- Email: [anasouhnou@gmail.com](mailto:anasouhnou@gmail.com)
 
 ---
 
-The app leverages several libraries for text extraction (pytesseract), translation (googletrans), and language processing (transformers), making it a versatile tool for medical support and language interaction.
-
-
-## Requirements
-
-Make sure you have the following Python libraries installed:
-
-- `streamlit`
-- `pytesseract`
-- `Pillow`
-- `requests`
-- `transformers`
-- `llama_cpp`
-- `googletrans==4.0.0-rc1`
-- `deep_translator`
-- `base64`
-
-To install the required libraries, you can use `pip`:
-
-```bash
-pip install streamlit pytesseract pillow requests transformers llama_cpp googletrans==4.0.0-rc1 deep-translator
-```
-
-# Prerequisites for llama_cpp
-The llama_cpp library requires a C++ compiler and additional tools for building C++ extensions. Follow these steps based on your operating system:
-
-## 1. C++ Compiler:
-Windows: Install Visual Studio Build Tools to get the required C++ compiler.
-macOS: Install Xcode Command Line Tools by running:
-```bash
-xcode-select --install
-```
-Linux: Install GCC using:
-```bash
-sudo apt-get install build-essential
-```
-## 2. CMake:
-CMake is required for building the C++ extensions. You can install it using:
-
-Windows: Download CMake from the CMake website.
-macOS/Linux: Use a package manager:
-```bash
-Copier le code
-# On macOS (using Homebrew)
-brew install cmake
-```
-
-# On Linux
-```bash
-sudo apt install cmake
-```
-Once the C++ compiler and CMake are installed, you can install the Python dependencies.
-
-# Setup Instructions
-## Install Tesseract OCR:
-You need to have Tesseract installed on your system for pytesseract to work.
-
-For Windows: Download Tesseract OCR
-For macOS: brew install tesseract
-For Linux: sudo apt install tesseract-ocr
-
-API Keys (if required):
-Some features (like the googletrans or other API-based services) may require API keys. Follow the respective API documentation to obtain the keys and set them up.
-
-## Usage
-Launch the App: To start the Streamlit app, navigate to the directory where your script is located and run the following command:
-
-```bash
-streamlit run app.py
-```
-## Upload Image:
-
-On the app's interface, upload an image containing text.
-The app will use Tesseract OCR to extract the text from the image.
-
-## Translate Extracted Text:
-
-After extracting the text, the app will automatically display the translated text in your chosen language.
-You can choose from various translation models depending on your needs.
-View Results: The app will show the extracted text, the translated text, and provide options to translate into different languages.
-
-## Code Explanation
-
-pytesseract: This library is used to extract text from the uploaded image using OCR.
-transformers: The library is used to load models for language processing tasks.
-googletrans and deep-translator: Used for translating the extracted text to different languages.
-
-
-
-## Important Note
-
-<p style="color:red;">
-⚠️ If you encounter any problems running the project, please contact us for further and detailed instructions.
-
-</p>
-📧 **Email**: [anasouhnou@gmail.com](mailto:anasouhnou@gmail.com)
+**Note**: This application is intended for informational purposes only and does not replace professional medical advice. Always consult with a healthcare provider for serious medical concerns.
