@@ -127,13 +127,6 @@ pytesseract: This library is used to extract text from the uploaded image using 
 transformers: The library is used to load models for language processing tasks.
 googletrans and deep-translator: Used for translating the extracted text to different languages.
 
-## DEMO
-
-**DEMO Se7ti AI**
-[Watch Demo Video](./2024-InnovAI-Hackathon/DHEALR/DEMO/demo-Se7ti.mp4)
-
-**DEMO Predignose feater**
-[Watch Demo Video](./2024-InnovAI-Hackathon/DHEALR/DEMO/demo-predignose.mp4)
 
 
 ## Important Note
